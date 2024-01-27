@@ -1,0 +1,71 @@
+{
+  "uuid": "bccb130d63aba403f9d6dca0fb99688f",
+  "path": "Offline/SPM%20Circuit",
+  "name": "SPM Circuit",
+  "content": "",
+  "created_at": "2022-06-13 18:16:24",
+  "updated_at": "2022-06-13 22:39:56",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "65a3d188729bc180f985e5a13c6464fb",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "068b3a0e62783d52cbf60865ecb8aa57",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "29b86dd421794b8b84dd8b62ded9170d": 1,
+        "67082a4ee642ac71e2dcdf6758d8dd66": 3
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "CR1220-2",
+          3,
+          "BAT-SMD_CR1220-2",
+          "B1,B2,B3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Q&J",
+            "BOM_Manufacturer Part": "CR1220-2",
+            "BOM_Supplier Part": "C70381",
+            "puuid": "ad4cf9a98ad04c21832cf27a15f0d202",
+            "uuid": "67082a4ee642ac71e2dcdf6758d8dd66"
+          }
+        ],
+        [
+          "7805(SOT-89)",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR",
+          "U1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CJ",
+            "BOM_Manufacturer Part": "CJ78L05",
+            "BOM_Supplier Part": "C2079",
+            "BOM_Paste Type": "expand",
+            "puuid": "89243c15a2974ba08305eced8ca2c9d4",
+            "uuid": "29b86dd421794b8b84dd8b62ded9170d"
+          }
+        ]
+      ],
+      "updateTime": 1655149196,
+      "createTime": 1655133385,
+      "histories": [],
+      "created_at": "2022-06-13 18:16:25",
+      "updated_at": "2022-06-13 22:39:56"
+    }
+  ],
+  "sort": [],
+  "title": "SPM Circuit",
+  "foldername": "SPM Circuit",
+  "schfilename": "SPM Circuit.json",
+  "schfilemtime": 1655149196564
+}

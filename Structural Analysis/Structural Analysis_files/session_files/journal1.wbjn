@@ -1,0 +1,77 @@
+# encoding: utf-8
+# Release 19.2
+SetScriptVersion(Version="19.2.120")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+favorites1 = EngData.LoadFavoriteItems()
+library1 = EngData.OpenLibrary(
+    Name="General Materials",
+    Source="General_Materials.xml")
+library2 = EngData.OpenLibrary(
+    Name="Granta Design Sample Materials",
+    Source="Granta_Design_Typical_Materials.xml")
+library3 = EngData.OpenLibrary(
+    Name="Additive Manufacturing Materials",
+    Source="Additive_Manufacturing_Materials.xml")
+library4 = EngData.OpenLibrary(
+    Name="Composite Materials",
+    Source="Composite_Materials.xml")
+library5 = EngData.OpenLibrary(
+    Name="General Non-linear Materials",
+    Source="General Materials Non-linear.xml")
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+matl1 = engineeringData1.ImportMaterial(
+    Name="Aluminum Alloy",
+    Source="General_Materials.xml")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit(IsSpaceClaimGeometry=True)
+geometry1.Exit()
+geometry1.SetFile(FilePath=GetAbsoluteUserPathName("HIAST/4th year/4th Year Project/Structural Analysis/Link.STEP"))
+system1.DisplayText = "Link Analysis"
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+engineeringDataComponent1 = system2.GetComponent(Name="Engineering Data")
+engineeringDataComponent2 = system1.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system1)
+geometry2 = system2.GetContainer(ComponentName="Geometry")
+geometry2.SetFile(FilePath=GetAbsoluteUserPathName("HIAST/4th year/4th Year Project/Structural Analysis/MotorGear.STEP"))
+system2.DisplayText = "Motor Gear Analysis"
+modelComponent2 = system2.GetComponent(Name="Model")
+modelComponent2.Refresh()
+model2 = system2.GetContainer(ComponentName="Model")
+model2.Edit()
+model2.Exit()
+Save(Overwrite=True)
+model1.Edit()
+model1.Exit()
+system3 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system2)
+engineeringDataComponent3 = system3.GetComponent(Name="Engineering Data")
+engineeringDataComponent3.ReplaceWithShare(
+    TargetSystem=system3,
+    ComponentToShare=engineeringDataComponent1,
+    SourceSystem=system2)
+geometry3 = system3.GetContainer(ComponentName="Geometry")
+geometry3.SetFile(FilePath=GetAbsoluteUserPathName("HIAST/4th year/4th Year Project/Structural Analysis/LayerGear.STEP"))
+modelComponent3 = system3.GetComponent(Name="Model")
+modelComponent3.Refresh()
+model3 = system3.GetContainer(ComponentName="Model")
+model3.Edit()
+model3.Exit()
+system3.DisplayText = "Layer Gear Analysis"
+results1 = system2.GetContainer(ComponentName="Results")
+results1.Edit()
+model2.Exit()
+Save(Overwrite=True)

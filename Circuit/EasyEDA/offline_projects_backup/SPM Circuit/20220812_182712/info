@@ -1,0 +1,177 @@
+{
+  "uuid": "0cae87de3b2267425b392a8a29d1ae99",
+  "path": "Offline/SPM%20Circuit",
+  "name": "SPM Circuit",
+  "content": "",
+  "created_at": "2022-06-18 20:02:59",
+  "updated_at": "2022-08-12 18:27:12",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "37086046fcd22b2a3dc93501adf315d1",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "fc1c8c95b98fdc174b165a59cb241028",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "b7adf400643b4936be8b786704d0e70f": 1,
+        "b0248eb51e084227889f2cb84eab79c4": 1,
+        "e5b28d7fdee847bd8ef2be91b0bd3d1d": 1,
+        "64752082718c4c8c9de1f63fde7f74df": 1,
+        "79fad1b4dc8043d9b62d249ec15c06f5": 1,
+        "93d043c9ce53447d88a71d19ff7bff35": 1,
+        "d65e477581384a698762bc3fb9006cfe": 2,
+        "81cc92e886e34648ae1cbe570b8cab5c": 1,
+        "6b126070453f45a1ae6dd64a24616c9e": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "ARDUINO_NANO",
+          1,
+          "COMM-TH_ARDUINO_NANO",
+          "ARDUINO",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900017879",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "ARDUINO_NANO",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "ff6e2030776d4574a7594ce501bb86c5",
+            "uuid": "b7adf400643b4936be8b786704d0e70f"
+          }
+        ],
+        [
+          "HC-05Bluetooth Sensor",
+          1,
+          "HDR-TH_6P-P2.50-V-F-R1-C6",
+          "BLUETOOTHMODULE",
+          {
+            "BOM_Supplier": "Cytron",
+            "BOM_Supplier Part": "HC-05",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "HC-05",
+            "puuid": "b6994363fc9e4ceb90fab7f963217c17",
+            "uuid": "93d043c9ce53447d88a71d19ff7bff35"
+          }
+        ],
+        [
+          "3S",
+          1,
+          "",
+          "BMS1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "",
+            "uuid": "6b126070453f45a1ae6dd64a24616c9e"
+          }
+        ],
+        [
+          "Capacitor1",
+          2,
+          "CAPACITOR1",
+          "DECOUPLINGC1,DECOUPLINGC2",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "5465afb589a34d1ab0da7676c8fa4a83",
+            "uuid": "d65e477581384a698762bc3fb9006cfe"
+          }
+        ],
+        [
+          "I2CPADS",
+          1,
+          "I2CPADS",
+          "I2C",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C265319",
+            "BOM_Manufacturer": "JST Sales America",
+            "BOM_Manufacturer Part": "RE-H042TD-1190(LF)(SN)",
+            "puuid": "025071f4cdca4865ba898fb87c1a53f4",
+            "uuid": "81cc92e886e34648ae1cbe570b8cab5c"
+          }
+        ],
+        [
+          "POWER-JACK",
+          1,
+          "DC-IN-TH_POWER-JACK",
+          "POWER",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900001795",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "POWER-JACK",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c309f5d2eb8e40b796181119d447a76e",
+            "uuid": "64752082718c4c8c9de1f63fde7f74df"
+          }
+        ],
+        [
+          "SS-12E19-G020",
+          1,
+          "SW-TH_G-SWITCH_SS-12E19-G020",
+          "POWERSWITCH",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2848901",
+            "BOM_Manufacturer": "G-Switch(品赞)",
+            "BOM_Manufacturer Part": "SS-12E19-G020",
+            "puuid": "edad937d00ed42348357ec748fc767d2",
+            "uuid": "79fad1b4dc8043d9b62d249ec15c06f5"
+          }
+        ],
+        [
+          "10k",
+          1,
+          "R0603",
+          "PULLUP",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b0248eb51e084227889f2cb84eab79c4"
+          }
+        ],
+        [
+          "SN74LS241DWR",
+          1,
+          "SOIC-20_L12.8-W7.5-P1.27-LS10.3-TL",
+          "TRIBUFFER",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2676097",
+            "BOM_Manufacturer": "TI(德州仪器)",
+            "BOM_Manufacturer Part": "SN74LS241DWR",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "20568f5970f049b4905b8ae373c25e44",
+            "uuid": "e5b28d7fdee847bd8ef2be91b0bd3d1d"
+          }
+        ]
+      ],
+      "updateTime": 1660318032,
+      "createTime": 1655571780,
+      "histories": [],
+      "created_at": "2022-06-18 20:03:00",
+      "updated_at": "2022-08-12 18:27:12"
+    }
+  ],
+  "sort": [],
+  "title": "SPM Circuit",
+  "foldername": "SPM Circuit",
+  "schfilename": "SPM Circuit.json",
+  "schfilemtime": 1660318032140
+}
