@@ -1,8 +1,43 @@
 # Design and Implementation of a 3-DOF Parallel Robot
 
-An extensive mechatronics project for the design, analysis, fabrication, electronics, and control of a three-degree-of-freedom spherical parallel mechanism. This repository includes CAD design iterations, final manufacturing files, PCB/Gerber assets, Arduino firmware, MATLAB inverse kinematics, torque-transmission analysis, ANSYS structural-analysis files, reports, posters, and presentation material.
+An end-to-end mechatronics project for the design, analysis, fabrication, electronics, and control of a three-degree-of-freedom spherical parallel mechanism. The repository includes CAD design iterations, final manufacturing files, PCB/Gerber assets, Arduino firmware, MATLAB inverse kinematics, torque-transmission analysis, ANSYS structural-analysis files, reports, posters, and presentation material.
 
-The project is closer to a complete engineering package than a simple robotics demo: it documents the mechanical design process, actuator selection, embedded control path, mathematical modeling, structural validation, and final deliverables.
+<p align="center">
+  <img src="Report/Images/SPM.PNG" alt="3-DOF spherical parallel mechanism" width="32%">
+  <img src="Report/Images/wrist%20design%20using%20spm.PNG" alt="Wrist design using spherical parallel mechanism" width="32%">
+  <img src="Report/Images/Worlspace%20of%20spm.PNG" alt="Workspace of the spherical parallel mechanism" width="32%">
+</p>
+
+## Problem
+
+Wrist-like robotic motion requires compact orientation control with multiple rotational degrees of freedom. This project explores a 3-DOF spherical parallel mechanism as a compact wrist joint, combining mechanical design, actuator integration, inverse kinematics, electronics, and structural validation.
+
+## My Role
+
+The work covers the complete development path:
+
+- Mechanism research and architecture selection
+- CAD design iterations and final manufacturing files
+- Inverse-kinematics and torque-transmission modeling in MATLAB
+- Servo control firmware and MATLAB-to-Arduino communication
+- PCB design assets and component integration
+- Structural-analysis project files and final engineering documentation
+
+## System Architecture
+
+```mermaid
+flowchart LR
+    MATLAB["MATLAB<br/>desired orientation"] --> IK["InverseKinematics.m<br/>motor angle solution"]
+    IK --> SERIAL["Serial communication"]
+    SERIAL --> MCU["Arduino controller"]
+    MCU --> SERVO["Dynamixel servos<br/>AX-12A / XL-320"]
+    SERVO --> MECH["3-DOF spherical<br/>parallel mechanism"]
+    CAD["Inventor / SolidWorks CAD"] --> MANUF["STEP / STL / DWG<br/>manufacturing files"]
+    CAD --> FEA["ANSYS structural analysis"]
+    MECH --> VALID["Workspace, torque,<br/>and structural validation"]
+    MANUF --> MECH
+    FEA --> VALID
+```
 
 ## Project Snapshot
 
@@ -17,10 +52,8 @@ The project is closer to a complete engineering package than a simple robotics d
 
 ## Engineering Scope
 
-This repository contains work across the full product-development loop:
-
 - Concept research into spherical parallel mechanisms and prosthetic/robotic wrist applications.
-- Multiple mechanical design branches and iterations, including coaxial, direct-connection, XL-320, AX-12A, and final designs.
+- Multiple design branches, including coaxial, direct-connection, XL-320, AX-12A, and final designs.
 - Final CAD assets in Inventor, SolidWorks, STEP, STL, and DWG formats.
 - Structural analysis files for validating critical components under load.
 - PCB design files, Gerber exports, and electronics backups.
@@ -55,9 +88,9 @@ Files/
 
 ## Kinematics and Control
 
-The MATLAB kinematics code computes motor commands from a desired 3-axis orientation. `InverseKinematics.m` builds rotation matrices for X, Y, and Z inputs, solves the spherical parallel mechanism geometry, converts mechanism angles into motor angles, and applies calibration offsets.
+`Programming/InverseKinematics.m` computes motor commands from a desired 3-axis orientation. The script builds rotation matrices for X, Y, and Z inputs, solves the spherical parallel mechanism geometry, converts mechanism angles into motor angles, and applies calibration offsets.
 
-The control path also includes:
+The control path includes:
 
 - MATLAB serial communication scripts
 - A MATLAB app for inverse-kinematics testing
@@ -69,47 +102,24 @@ This connects mathematical kinematics to real actuator commands.
 
 ## Torque and Structural Analysis
 
-`TorqueTransmission.m` computes Jacobian-based torque transmission through the mechanism, while `MechanismTorqueAnalysis.m` evaluates how transmitted torque changes across angular sweeps from -30 to 30 degrees.
+`Programming/TorqueTransmission.m` computes Jacobian-based torque transmission through the mechanism. `Programming/MechanismTorqueAnalysis.m` evaluates how transmitted torque changes across angular sweeps from -30 to 30 degrees.
 
 The repository also includes ANSYS Workbench files and solved structural-analysis data, supporting the mechanical design with stress/displacement validation rather than relying only on CAD geometry.
 
-## Mechanical and Manufacturing Assets
+## Final Deliverables
 
-The final design folder includes:
+- Working kinematic model for a 3-DOF spherical parallel mechanism
+- Multiple CAD iterations and a final manufacturing-oriented design
+- SolidWorks, Inventor, STEP, STL, and DWG assets
+- Arduino firmware for actuator control and MATLAB communication
+- PCB/Gerber design assets
+- Structural-analysis project files and result artifacts
+- Final report, poster, presentation, and mechanism images
 
-- Inventor assemblies and parts
-- SolidWorks parts and assemblies
-- STEP files for exchange/manufacturing
-- STL files for fabrication
-- DWG drawings for individual components
-- Exploded-view assets and final assembly files
+## How to Explore
 
-These assets document the project as a real build package, not just a concept image.
-
-## Electronics and Firmware Assets
-
-The `Circuit/` folder contains PCB work in EasyEDA and CadStar formats, including a Gerber package. The `Programming/Arduino/` folder contains firmware for:
-
-- AX-12A servo ID changes, movement, and reset
-- XL-320 servo setup and movement
-- MATLAB-to-Arduino serial communication for the SPM robot
-
-## What This Project Demonstrates
-
-- End-to-end parallel robot development
-- Mechanical design iteration and final manufacturing file preparation
-- Spherical parallel mechanism inverse kinematics
-- Jacobian-based torque transmission analysis
-- Embedded servo control using Arduino and Dynamixel actuators
-- PCB design and electronics packaging
-- Structural analysis using ANSYS Workbench
-- Engineering reporting, presentation, and portfolio documentation
-
-## Project Roadmap
-
-- Final robot photos or CAD renders
-- Images from `Report/Images/` showing workspace, mechanism architecture, and final design
-- Build notes identifying the final hardware CAD folder
-- Run notes for the MATLAB inverse-kinematics script and Arduino communication sketch
-- Diagrams for the kinematic chain, actuator layout, and serial communication flow
-- Results section with workspace limits, torque-analysis plots, and structural-analysis screenshots
+- Start with `Report/Final Report.pdf` and `Report/Poster.pdf` for project context.
+- Review `Report/Images/` for mechanism architecture, workspace, and final visual material.
+- Use `Design/Final/` for the final mechanical design package.
+- Use `Programming/InverseKinematics.m` and `Programming/TorqueTransmission.m` for the core mathematical model.
+- Use `Programming/Arduino/` for the embedded actuator-control layer.
