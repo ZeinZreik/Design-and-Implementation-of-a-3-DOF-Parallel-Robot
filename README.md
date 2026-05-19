@@ -65,7 +65,7 @@ The control path also includes:
 - Dynamixel XL-320 and AX-12A servo control sketches
 - Servo ID, reset, and movement utilities
 
-This makes the repo valuable because it connects mathematical kinematics to real actuator commands.
+This connects mathematical kinematics to real actuator commands.
 
 ## Torque and Structural Analysis
 
@@ -84,7 +84,7 @@ The final design folder includes:
 - DWG drawings for individual components
 - Exploded-view assets and final assembly files
 
-This helps recruiters, collaborators, or clients see the project as a real build package, not just a concept image.
+These assets document the project as a real build package, not just a concept image.
 
 ## Electronics and Firmware Assets
 
@@ -105,17 +105,11 @@ The `Circuit/` folder contains PCB work in EasyEDA and CadStar formats, includin
 - Structural analysis using ANSYS Workbench
 - Engineering reporting, presentation, and portfolio documentation
 
-## Suggested GitHub Topics
+## Project Roadmap
 
-Already applied to the repository:
-
-`arduino` `matlab` `mechatronics` `robotics` `3dof` `ansys` `kinematics` `parallel-robot` `solidworks` `spherical-parallel-mechanism`
-
-## Recommended Next Enhancements
-
-- Add final robot photos or CAD renders near the top of this README.
-- Embed images from `Report/Images/` to show workspace, mechanism architecture, and final design.
-- Add a short build section explaining which CAD folder represents the final hardware.
-- Add a short run section for the MATLAB inverse-kinematics script and Arduino communication sketch.
-- Add diagrams for the kinematic chain, actuator layout, and serial communication flow.
-- Add a results section with workspace limits, torque-analysis plots, and structural-analysis screenshots.
+- Final robot photos or CAD renders
+- Images from `Report/Images/` showing workspace, mechanism architecture, and final design
+- Build notes identifying the final hardware CAD folder
+- Run notes for the MATLAB inverse-kinematics script and Arduino communication sketch
+- Diagrams for the kinematic chain, actuator layout, and serial communication flow
+- Results section with workspace limits, torque-analysis plots, and structural-analysis screenshots
